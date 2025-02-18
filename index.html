@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project Group Webpage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile1.html">Profile 1</a></li>
+            <li><a href="profile2.html">Profile 2</a></li>
+            <li><a href="profile3.html">Profile 3</a></li>
+        </ul>
+    </nav>
+
+    <header class="header">
+        <h1>Welcome to Our Final Project Webpage</h1>
+        <p>Explore our profiles and learn more about our team members.</p>
+    </header>
+
+    <main class="profiles">
+        <div class="profile">
+            <h2>Profile 1</h2>
+            <p>Role: Developer</p>
+            <div class="rating" data-person="1">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+        </div>
+        <div class="profile">
+            <h2>Profile 2</h2>
+            <p>Role: Designer</p>
+            <div class="rating" data-person="2">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+        </div>
+        <div class="profile">
+            <h2>Profile 3</h2>
+            <p>Role: Project Manager</p>
+            <div class="rating" data-person="3">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Final Project Team. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+/* style.css */
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: relative;
+}
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s;
+}
+.menu a {
+    text-decoration: none;
+    color: #fff;
+}
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+.header {
+    text-align: center;
+    margin-top: 20px;
+}
+.profiles {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+.profile {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+.star {
+    font-size: 2em;
+    cursor: pointer;
+    color: #ccc;
+}
+.star.active {
+    color: gold;
+}
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* script.js */
+
+function toggleMenu() {
+    document.querySelector('.menu').classList.toggle('show');
+}
+
+// Rating system
+const stars = document.querySelectorAll('.star');
+stars.forEach(star => {
+    star.addEventListener('click', function () {
+        const value = parseInt(this.getAttribute('data-value'));
+        const parent = this.parentNode;
+        const allStars = parent.querySelectorAll('.star');
+        allStars.forEach(s => s.classList.remove('active'));
+        for (let i = 0; i < value; i++) {
+            allStars[i].classList.add('active');
+        }
+    });
+});
 
