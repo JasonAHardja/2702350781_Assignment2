@@ -1,1 +1,48 @@
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: relative;
+}
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s;
+}
+.menu a {
+    text-decoration: none;
+    color: #fff;
+}
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+.header {
+    text-align: center;
+    margin-top: 20px;
+}
+.profiles {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+.profile {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+.star {
+    font-size: 2em;
+    cursor: pointer;
+    color: #ccc;
+}
+.star.active {
+    color: gold;
+}
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
 
