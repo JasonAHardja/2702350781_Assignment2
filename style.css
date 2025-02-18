@@ -1,3 +1,5 @@
+/* style.css */
+
 .navbar {
     background-color: #333;
     color: #fff;
@@ -23,8 +25,9 @@
     margin-top: 20px;
 }
 .profiles {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     margin: 20px;
 }
 .profile {
