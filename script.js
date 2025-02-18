@@ -2,7 +2,6 @@ function toggleMenu() {
     document.querySelector('.menu').classList.toggle('show');
 }
 
-// Rating system
 const stars = document.querySelectorAll('.star');
 stars.forEach(star => {
     star.addEventListener('click', function () {
